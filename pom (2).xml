@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>1.5.2.RELEASE</version>
+    </parent>
+
+    
+    <groupId>com.h3c.bigdata.itoa</groupId>
+    <artifactId>itoa-health</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0</version>
+
+	
+    <!--主要框架的版本号配置 -->
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <log4j.version>1.2.17</log4j.version>
+        <slf4j.version>1.7.7</slf4j.version>
+        <scala.version>2.11.12</scala.version>
+        <scala.major_version>2.11</scala.major_version>
+        <flink.version>1.6.0</flink.version>
+        <logback.version>1.1.11</logback.version>
+    </properties>
+
+    <modules>
+        <module>health_analysis</module>
+		<module>Int_business</module>
+        <module>external/SnmpTrapParase</module>
+        <module>external/onoffline-and-alarm-process</module>
+        <module>external/OasisKafka</module>
+        <module>external/DHCPParase</module>
+        <module>external/IntAnalysis</module>
+        <module>external/congestionAnalyze</module>
+        <module>external/deviceResource</module>
+        <module>external/wiredHealthDegree</module>
+        <module>external/HealthAnalysis</module>
+        <module>external/DNSHealthAnalysis</module>
+        <module>external/gRPCAnalysis</module>
+        <module>external/BGPAnalysis</module>
+        <module>external/AclAnalysis</module>
+        <module>external/flinkAppRoute</module>
+		<module>external/UserLog</module>
+        <module>external/UrlAudit</module>
+		<module>external/TwampStreamAnalysis</module>
+        <module>external/SeerBladeAnalysis</module>
+        <module>external/VideoQualityAnalysis</module>
+        <module>external/NqaStreamAnalysis</module>
+        <module>external/GrpcNqaStreamAnalysis</module>
+        <module>external/RirLogAnalysisOffline</module>
+        <module>external/DevEffectAnalysis</module>
+        <module>external/NetconfAnalysis</module>
+        <module>external/INQAParse</module>
+		<module>external/INTNetconf</module>
+        <module>external/sa-user-statistics</module>
+        <module>external/wirelessUserProcess</module>
+        <module>external/wired-health-degree</module>
+    </modules>
+
+  <!--  <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                        <configuration>
+                            <tasks>
+                                <delete dir="target"/>
+                                <mkdir dir="target/${project.artifactId}"/>
+                                <mkdir dir="target/${project.artifactId}/task"/>
+                                <mkdir dir="target/docker"/>
+                                <copy todir="target/${project.artifactId}" overwrite="true" >
+                                    <fileset dir="config" erroronmissingdir="false" />
+                                    <fileset dir="" erroronmissingdir="false">
+                                        <include name="app.json"/>
+                                        <include name="README.md"/>
+                                    </fileset>
+                                </copy>
+                                <copy todir="target/docker" overwrite="true" >
+                                    <fileset dir="docker" erroronmissingdir="false"/>
+                                </copy>
+                            </tasks>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>-->
+</project>
